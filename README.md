@@ -17,7 +17,7 @@ Ce projet utilise l'API de Google Maps pour fournir des fonctionnalités de cart
    ```
 2. Accédez au répertoire du projet
    ```bash
-   cd test-technique-beecoming-2024.
+   cd test-technique-beecoming-2024
    ```
 3. Installez les dépendances
    ```bash

@@ -1,0 +1,20 @@
+{
+  "city": [
+    {
+      "id": "e3c7",
+      "country": "eeepp",
+      "city": "uèjuju",
+      "population": 2,
+      "latitude": "ju",
+      "longitude": "uèjujuju"
+    },
+    {
+      "id": "e3c7",
+      "country": "tttt",
+      "city": "uèjujutt",
+      "population": 2,
+      "latitude": "t",
+      "longitude": "uèjujujuttt"
+    }
+  ]
+}

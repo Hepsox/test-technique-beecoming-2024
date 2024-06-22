@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListCardComponent } from './list-card/list-card.component';
 
-const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', component: Map },
+  { path: 'list', component: ListCardComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

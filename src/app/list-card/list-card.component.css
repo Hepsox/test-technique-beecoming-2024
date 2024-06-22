@@ -1,3 +1,36 @@
+.form-city {
+  width: 100%;
+}
+
+.form-city input {
+  padding: 12px 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+
+.form-city label {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+}
+.container-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.btn-submit button {
+  background-color: #2443b0;
+  color: white;
+  padding: 14px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .card-container {
   width: 450px;
   background: rgba(255, 255, 255, 0.53);

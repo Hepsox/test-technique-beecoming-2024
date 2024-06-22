@@ -1,20 +1,44 @@
 {
   "city": [
     {
-      "id": "e3c7",
-      "country": "eeepp",
-      "city": "uèjuju",
-      "population": 2,
-      "latitude": "ju",
-      "longitude": "uèjujuju"
+      "id": "4bb6",
+      "country": "France",
+      "city": "Paris",
+      "population": 2000000,
+      "lat": 48.8566,
+      "lng": 2.3522
     },
     {
-      "id": "e3c7",
-      "country": "tttt",
-      "city": "uèjujutt",
-      "population": 2,
-      "latitude": "t",
-      "longitude": "uèjujujuttt"
+      "id": "ac4f",
+      "country": "Allemagne",
+      "city": "Berlin",
+      "population": 3600000,
+      "lat": 52.52,
+      "lng": 13.405
+    },
+    {
+      "id": "2efb",
+      "country": "Italie",
+      "city": "Rome",
+      "population": 2800000,
+      "lat": 41.9028,
+      "lng": 12.4964
+    },
+    {
+      "id": "05d1",
+      "country": "Royaume-Uni",
+      "city": "Londres",
+      "population": 9000000,
+      "lat": 51.5074,
+      "lng": -0.1278
+    },
+    {
+      "id": "f60d",
+      "country": "Portugal",
+      "city": "Lisbonne",
+      "population": 505000,
+      "lat": 38.7167,
+      "lng": -9.1333
     }
   ]
 }

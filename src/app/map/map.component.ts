@@ -14,10 +14,11 @@ export class MapComponent {
   zoom = 5;
   markerPosition: google.maps.LatLngLiteral = this.center;
   selectedCity: City | null = null;
-
-  constructor(private service: CityService) {}
+  myPosition: null | google.maps.LatLngLiteral = null;
 
   listCities$: Observable<City[]> = this.service.getAllCities();
+
+  constructor(private service: CityService) {}
 
   showCityInfo(city: City) {
     this.selectedCity = city;
@@ -28,6 +29,10 @@ export class MapComponent {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           this.center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          this.myPosition = {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };

@@ -4,7 +4,7 @@
       <div *ngFor="let city of listeCities" class="card-info">
         <h1>{{ city.country }}</h1>
         <h2>{{ city.city }}</h2>
-        <h3>Population : {{ city.population }} Millions</h3>
+        <p>Population : {{ city.population | formatPopulation }}</p>
         <hr />
 
         <div class="position-city">
@@ -37,7 +37,7 @@
       #FormCityForm="ngForm"
     >
       <h1>
-        {{ isEditing ? "Modifier la capitale" : "Ajouter une capitale " }}
+        {{ isEditing ? "Modifier la capitale" : "Ajouter une capitale" }}
       </h1>
       <h2>Tous les champs sont obligatoires</h2>
       <div class="container-input">
@@ -48,6 +48,12 @@
           formControlName="country"
           placeholder="Exemple : France"
         />
+        <div
+          class="error"
+          *ngIf="FormCityForm.submitted && formCity?.get('country')?.errors?.['required']"
+        >
+          <span>Le pays est requis</span>
+        </div>
 
         <div class="container-input">
           <label for="city">Ville *</label>
@@ -57,36 +63,74 @@
             formControlName="city"
             placeholder="Exemple : Paris"
           />
+          <div
+            class="error"
+            *ngIf="FormCityForm.submitted && formCity?.get('city')?.errors?.['required']"
+          >
+            <span>La ville est requise</span>
+          </div>
         </div>
 
         <div class="container-input">
-          <label for="city">Population en Millions d'habitants*</label>
+          <label for="city">Population *</label>
           <input
             type="number"
             id="population"
             formControlName="population"
-            placeholder="Exemple : 2.5"
+            placeholder="Exemple : 250000"
+            min="0"
           />
+          <div
+            class="error"
+            *ngIf="FormCityForm.submitted && formCity?.get('population')?.errors?.['required']"
+          >
+            <span>La population est requise</span>
+          </div>
         </div>
 
         <div class="container-input">
           <label for="latitude">Latitude *</label>
           <input
-            type="number"
+            type="text"
             id="latitude"
             formControlName="lat"
             placeholder="Exemple : 48.8566"
           />
         </div>
 
+        <div
+          class="error"
+          *ngIf="FormCityForm.submitted && formCity?.get('lat')?.errors?.['required']"
+        >
+          <span>La latitude est requise</span>
+        </div>
+        <div
+          class="error"
+          *ngIf="FormCityForm.submitted && formCity?.get('lat')?.errors?.['invalidLatitudeOrLongitude']"
+        >
+          <span>La latitude est mal formatée</span>
+        </div>
+
         <div class="container-input">
           <label for="longitude">Longitude *</label>
           <input
-            type="number"
+            type="text"
             id="longitude"
             formControlName="lng"
             placeholder="Exemple : 2.3522"
           />
+        </div>
+        <div
+          class="error"
+          *ngIf="FormCityForm.submitted && formCity?.get('lng')?.errors?.['required']"
+        >
+          <span>La longitude est requise</span>
+        </div>
+        <div
+          class="error"
+          *ngIf="FormCityForm.submitted && formCity?.get('lng')?.errors?.['invalidLatitudeOrLongitude']"
+        >
+          <span>La longitude est mal formatée</span>
         </div>
       </div>
 

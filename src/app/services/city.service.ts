@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { City as City } from '../types/city.types';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class CityService {
 
   createCity(registerValues: City): Observable<City> {
     const dataToSend: any = { ...registerValues };
-    if (dataToSend.id === '') {
+    if (!dataToSend.id) {
       delete dataToSend.id;
     }
     return this.http.post<City>(this._BASE_URL, dataToSend);
@@ -20,10 +20,6 @@ export class CityService {
 
   getAllCities(): Observable<City[]> {
     return this.http.get<City[]>(this._BASE_URL);
-  }
-
-  getCityById(id: string): Observable<City> {
-    return this.http.get<City>(`${this._BASE_URL}/${id}`);
   }
 
   deleteCity(id: string): Observable<City> {

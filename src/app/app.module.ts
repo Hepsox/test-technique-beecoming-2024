@@ -10,6 +10,7 @@ import { MapComponent } from './map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HeaderComponent } from './header/header.component';
 import { CardInfosComponent } from './card-infos/card-infos.component';
+import { FormatPopulationPipe } from './format-population.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CardInfosComponent } from './card-infos/card-infos.component';
     MapComponent,
     HeaderComponent,
     CardInfosComponent,
+    FormatPopulationPipe,
   ],
   imports: [
     BrowserModule,

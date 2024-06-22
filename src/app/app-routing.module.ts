@@ -4,7 +4,7 @@ import { ListCardComponent } from './list-card/list-card.component';
 import { MapComponent } from './map/map.component';
 
 export const routes: Routes = [
-  { path: 'map', component: MapComponent },
+  { path: '', component: MapComponent },
   { path: 'list', component: ListCardComponent },
 ];
 

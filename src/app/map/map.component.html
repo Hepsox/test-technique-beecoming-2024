@@ -12,6 +12,8 @@
         [position]="{ lat: city.lat, lng: city.lng }"
         (mapClick)="showCityInfo(city)"
       ></map-marker>
+
+      <map-marker *ngIf="myPosition" [position]="myPosition"></map-marker>
     </ng-container>
   </google-map>
 

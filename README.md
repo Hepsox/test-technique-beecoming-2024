@@ -1,27 +1,48 @@
-# TestTechnique
+# Test Technique Marie Delaire
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+## Description
 
-## Development server
+Ce projet utilise l'API de Google Maps pour fournir des fonctionnalités de cartographie. Assurez-vous de configurer votre clé API avant de lancer le projet.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prérequis
 
-## Code scaffolding
+- Node.js installé
+- npm installé
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+1. Clonez le dépôt
+   ```bash
+   git clone https://github.com/hepsox/test-technique-beecoming-2024.git
+   ```
+2. Accédez au répertoire du projet
+   ```bash
+   cd test-technique-beecoming-2024.
+   ```
+3. Installez les dépendances
+   ```bash
+   npm install
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Configuration de l'API Google Maps
 
-## Running unit tests
+Pour utiliser l'API de Google Maps, vous devez ajouter votre clé API. Suivez ces étapes :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Ouvrez le fichier `index.html` et modifiez le script suivant avec votre propre clé API :
+   ```html
+   <script src="https://maps.googleapis.com/maps/api/js?key=VotreCléAPI"></script>
+   ```
 
-## Running end-to-end tests
+## Lancer l'application
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Pour lancer le serveur JSON, exécutez la commande suivante :
 
-## Further help
+```bash
+npm run json
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Pour lancer le front-end Angular, exécutez la commande suivante :
+
+```bash
+npm run start
+```

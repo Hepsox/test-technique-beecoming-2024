@@ -1,0 +1,17 @@
+.container-localisation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.important-info {
+  background-color: var(--important-color);
+  padding: 16px 30px;
+  font-size: 1.2rem;
+}

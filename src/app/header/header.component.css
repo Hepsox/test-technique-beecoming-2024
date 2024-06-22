@@ -1,0 +1,51 @@
+.header-navigation {
+  background-color: var(--primary-color);
+  padding: 16px 20px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: -10px auto;
+  margin-bottom: 30px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.header-navigation h1 {
+  padding-left: 20px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 500;
+}
+.header-navigation h2 {
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: -15px;
+
+  color: white;
+}
+.btn-submit button {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 11px 20px;
+  border-radius: 6px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.btn-list {
+  margin-right: 10px;
+  background-color: var(--primary-color);
+  border: solid 2px white;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-map {
+  margin-right: 10px;
+  background-color: white;
+  border: solid 2px white;
+  color: var(--primary-color);
+  font-weight: 600;
+}

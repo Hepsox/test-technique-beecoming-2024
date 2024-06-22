@@ -8,24 +8,29 @@ import { City as City } from '../types/city.types';
 })
 export class CityService {
   constructor(private http: HttpClient) {}
+  private _BASE_URL = 'http://localhost:3000/city';
 
   createCity(registerValues: City): Observable<City> {
-    return this.http.post<City>('http://localhost:3000/city', registerValues);
+    const dataToSend: any = { ...registerValues };
+    if (dataToSend.id === '') {
+      delete dataToSend.id;
+    }
+    return this.http.post<City>(this._BASE_URL, dataToSend);
   }
 
   getAllCities(): Observable<City[]> {
-    return this.http.get<City[]>('http://localhost:3000/city');
+    return this.http.get<City[]>(this._BASE_URL);
   }
 
   getCityById(id: string): Observable<City> {
-    return this.http.get<City>(`http://localhost:3000/city/${id}`);
+    return this.http.get<City>(`${this._BASE_URL}/${id}`);
   }
 
   deleteCity(id: string): Observable<City> {
-    return this.http.delete<City>(`http://localhost:3000/city/${id}`);
+    return this.http.delete<City>(`${this._BASE_URL}/${id}`);
   }
 
   updateCityById(id: string, city: City): Observable<City> {
-    return this.http.put<City>(`http://localhost:3000/city/${id}`, city);
+    return this.http.put<City>(`${this._BASE_URL}/${id}`, city);
   }
 }

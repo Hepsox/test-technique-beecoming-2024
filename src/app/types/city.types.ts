@@ -3,6 +3,6 @@ export type City = {
   country: string;
   city: string;
   population: number;
-  latitude: string;
-  longitude: string;
+  lat: number;
+  lng: number;
 };

@@ -1,19 +1,30 @@
 .form-city {
-  width: 100%;
+  width: 45%;
+}
+.container-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 55%;
 }
 
 .form-city input {
   padding: 12px 10px;
-  border: solid 1px black;
+  border: solid 1px var(--quaternary-color);
   border-radius: 5px;
   margin-top: 6px;
+}
+
+.form-city ::placeholder {
+  color: gray;
+  font-style: italic;
 }
 
 .form-city label {
   margin-top: 10px;
   font-weight: 600;
-  font-size: 16px;
-  color: black;
+  font-size: 1 rem;
+  color: var(--quaternary-color);
 }
 .container-input {
   display: flex;
@@ -22,8 +33,15 @@
   width: 100%;
 }
 
+.form-city h2 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--quaternary-color);
+  margin-top: -20px;
+}
+
 .btn-submit button {
-  background-color: #2443b0;
+  background-color: var(--primary-color);
   color: white;
   padding: 14px 20px;
   margin-top: 20px;
@@ -31,71 +49,44 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.card-container {
-  width: 450px;
-  background: rgba(255, 255, 255, 0.53);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.8px);
-  -webkit-backdrop-filter: blur(8.8px);
-  border-radius: 15px;
-  min-height: 300px;
-  cursor: pointer;
-  padding: 20px;
-}
-
-.card-container h1 {
-  background-color: #2443b0;
-  display: inline-block;
-  color: white;
-  padding: 5px 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.card-container h2 {
-  font-size: 20px;
-  font-weight: 600;
-  color: black;
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.card-container h3 {
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: -10px;
-}
 
 .container-btn {
+  margin-top: 20px;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 10px;
 }
 
-.btn-general {
-  background: #f1f1f1;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
+.position-city {
+  font-style: italic;
+}
+.position-city h4.longitude {
+  margin-top: -20px;
+}
+
+.btn-general:hover {
+  transform: scale(1.05);
 }
 
 .btn-update {
-  background: #878b9a;
+  background: var(--tertiary-color);
 }
 
 .btn-delete {
-  background: #c01820;
+  background: var(--secondary-color);
+}
+
+.btn-add {
+  background: var(--important-color);
 }
 
 .card-container h4 {
   font-size: 15px;
   font-weight: 400;
   margin-top: 10px;
+}
+
+.btn-cancel {
+  background: red;
 }

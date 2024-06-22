@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CityService } from '../services/city.service';
 import { Observable } from 'rxjs';
 import { City } from '../types/city.types';
@@ -12,6 +12,7 @@ import { City } from '../types/city.types';
 export class ListCardComponent {
   formCity!: FormGroup;
   displayForm = false;
+  isEditing = false;
   constructor(private fb: FormBuilder, private service: CityService) {}
 
   listeCities$: Observable<City[]> = this.service.getAllCities();
@@ -33,13 +34,14 @@ export class ListCardComponent {
 
   goToUpdate(city: City) {
     this.displayForm = true;
+    this.isEditing = true;
     this.formCity = this.fb.group({
       id: city.id,
       country: city.country,
       city: city.city,
       population: city.population,
-      latitude: city.latitude,
-      longitude: city.longitude,
+      lat: city.lat,
+      lng: city.lng,
     });
 
     this.service.updateCityById(city.id, this.formCity.value).subscribe(() => {
@@ -47,14 +49,20 @@ export class ListCardComponent {
     });
   }
 
+  onAddButtonClick() {
+    this.formCity.reset();
+    this.isEditing = false;
+    this.displayForm = true;
+  }
+
   ngOnInit(): void {
     this.formCity = this.fb.group({
       id: [''],
-      country: [''],
-      city: [''],
-      population: [''],
-      latitude: [''],
-      longitude: [''],
+      country: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      population: ['', [Validators.required]],
+      lat: ['', [Validators.required]],
+      lng: ['', [Validators.required]],
     });
   }
 }

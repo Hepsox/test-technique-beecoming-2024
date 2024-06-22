@@ -1,80 +1,102 @@
-<ng-container *ngIf="listeCities$ | async as listeCities">
-  <div *ngFor="let city of listeCities" class="card-container">
-    <h1>{{ city.country }}</h1>
-    <h2>{{ city.city }}</h2>
-    <h3>{{ city.population }}</h3>
-    <hr />
-    <h4>{{ city.longitude }}</h4>
-    <h4>{{ city.latitude }}</h4>
-    <div class="container-btn">
-      <button class="btn-general btn-update" (click)="goToUpdate(city)">
-        Modifier
-      </button>
-      <button class="btn-general btn-delete" (click)="deleteCity(city.id)">
-        Supprimer
+<div class="container-page">
+  <div class="container-list">
+    <ng-container *ngIf="listeCities$ | async as listeCities">
+      <div *ngFor="let city of listeCities" class="card-info">
+        <h1>{{ city.country }}</h1>
+        <h2>{{ city.city }}</h2>
+        <h3>Population : {{ city.population }} Millions</h3>
+        <hr />
+
+        <div class="position-city">
+          <h4>Latitude : {{ city.lat }}</h4>
+          <h4 class="longitude">Longitude : {{ city.lng }}</h4>
+        </div>
+
+        <div class="container-btn">
+          <button class="btn-general btn-update" (click)="goToUpdate(city)">
+            Modifier
+          </button>
+          <button class="btn-general btn-delete" (click)="deleteCity(city.id)">
+            Supprimer
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="form-city">
+    <div>
+      <button class="btn-general btn-add" (click)="onAddButtonClick()">
+        Ajouter une capitale
       </button>
     </div>
+    <form
+      *ngIf="displayForm"
+      (ngSubmit)="formCity.valid && onValidate()"
+      [formGroup]="formCity"
+      #FormCityForm="ngForm"
+    >
+      <h1>
+        {{ isEditing ? "Modifier la capitale" : "Ajouter une capitale " }}
+      </h1>
+      <h2>Tous les champs sont obligatoires</h2>
+      <div class="container-input">
+        <label for="country">Pays *</label>
+        <input
+          type="text"
+          id="country"
+          formControlName="country"
+          placeholder="Exemple : France"
+        />
+
+        <div class="container-input">
+          <label for="city">Ville *</label>
+          <input
+            type="text"
+            id="city"
+            formControlName="city"
+            placeholder="Exemple : Paris"
+          />
+        </div>
+
+        <div class="container-input">
+          <label for="city">Population en Millions d'habitants*</label>
+          <input
+            type="number"
+            id="population"
+            formControlName="population"
+            placeholder="Exemple : 2.5"
+          />
+        </div>
+
+        <div class="container-input">
+          <label for="latitude">Latitude *</label>
+          <input
+            type="number"
+            id="latitude"
+            formControlName="lat"
+            placeholder="Exemple : 48.8566"
+          />
+        </div>
+
+        <div class="container-input">
+          <label for="longitude">Longitude *</label>
+          <input
+            type="number"
+            id="longitude"
+            formControlName="lng"
+            placeholder="Exemple : 2.3522"
+          />
+        </div>
+      </div>
+
+      <div class="container-btn">
+        <button class="btn-general btn-update" (click)="displayForm = false">
+          Annuler
+        </button>
+        <button class="btn-general btn-add" type="submit">Enregistrer</button>
+      </div>
+      <input type="hidden" formControlName="id" />
+    </form>
   </div>
-</ng-container>
-<div>
-  <button class="btn-general btn-add" (click)="displayForm = true">
-    Ajouter un pays
-  </button>
 </div>
-
-<form
-  *ngIf="displayForm"
-  class="form-city"
-  (ngSubmit)="onValidate()"
-  [formGroup]="formCity"
->
-  <h1>Ajouter un pays</h1>
-  <div class="container-input">
-    <label for="country">Pays *</label>
-    <input
-      type="text"
-      id="country"
-      formControlName="country"
-      placeholder="Nom du pays"
-    />
-
-    <div class="container-input">
-      <label for="city">Ville *</label>
-      <input type="text" id="city" formControlName="city" placeholder="Ville" />
-    </div>
-    <div class="container-input">
-      <label for="city">Population *</label>
-      <input
-        type="number"
-        id="population"
-        formControlName="population"
-        placeholder="Population"
-      />
-    </div>
-
-    <div class="container-input">
-      <label for="latitude">Latitude *</label>
-      <input
-        type="text"
-        id="latitude"
-        formControlName="latitude"
-        placeholder="Latitude"
-      />
-    </div>
-
-    <div class="container-input">
-      <label for="longitude">Longitude *</label>
-      <input
-        type="text"
-        id="longitude"
-        formControlName="longitude"
-        placeholder="Longitude"
-      />
-    </div>
-  </div>
-
-  <div class="btn-submit">
-    <button type="submit">Enregistrer ma demande</button>
-  </div>
-  <input type="hidden" formControlName="id" />
-</form>

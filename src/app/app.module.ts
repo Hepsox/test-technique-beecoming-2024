@@ -7,10 +7,24 @@ import { provideHttpClient } from '@angular/common/http';
 import { ListCardComponent } from './list-card/list-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MapComponent } from './map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { HeaderComponent } from './header/header.component';
+import { CardInfosComponent } from './card-infos/card-infos.component';
 
 @NgModule({
-  declarations: [AppComponent, ListCardComponent, MapComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    ListCardComponent,
+    MapComponent,
+    HeaderComponent,
+    CardInfosComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    GoogleMapsModule,
+  ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })

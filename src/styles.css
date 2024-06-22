@@ -5,3 +5,72 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #2443b0;
+  --secondary-color: #c01821;
+  --tertiary-color: #878b9a;
+  --quaternary-color: #09021d;
+  --important-color: #f8960c;
+  --background-color: rgba(255, 255, 255, 0.53);
+  --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.container-page {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+.card-info {
+  width: 300px;
+  background: var(--background-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px var(--box-shadow);
+  border-radius: 15px;
+  padding: 20px;
+  font-weight: 400;
+}
+
+.card-info h1 {
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card-info h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--quaternary-color);
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.card-info h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: -10px;
+}
+
+.position-city h4 {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.position-city h4.longitude {
+  margin-top: -20px;
+}
+.btn-general {
+  background: #f1f1f1;
+  font-size: 0.8rem;
+  font-weight: 400;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
